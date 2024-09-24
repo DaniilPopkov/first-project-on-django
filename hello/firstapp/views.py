@@ -41,7 +41,7 @@ def details(request):
     return HttpResponsePermanentRedirect("/")
 
 def index(request):
-    return render(request, "firstapp/home.html")
+    return render(request, "firstapp/index.html")
     # header = "Персональные данные" # обычная переменная
     # langs = ["Английский", "Немецкий", "Испанский"] # массив
     # user = {"name": "Максим,", "age": 30} # словарь
