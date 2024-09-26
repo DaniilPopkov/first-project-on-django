@@ -22,5 +22,9 @@ from django import forms
 # class UserForm(forms.Form):
 #     combo_text = forms.ComboField(label="Введите URL",
 #     fields=[forms.URLField(), forms.CharField(max_length=20)])
+
 class UserForm(forms.Form):
- file = forms.FileField(label="Файл")
+        name = forms.CharField(label="Имя клиента",
+    widget=forms.TextInput(attrs={"class": "myfield"}))
+        age = forms.IntegerField(label="Возраст клиента",
+    widget=forms.NumberInput(attrs={"class": "myfield"}))
