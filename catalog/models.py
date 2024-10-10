@@ -52,6 +52,9 @@ class Book(models.Model):
     def get_absolute_url(self):
  # Возвращает url-адрес для доступа к определенному экземпляру книги.
      return reverse('book-detail', args=[str(self.id)])
+    def display_author(self):
+        return ', '.join([author.last_name for author in self.author.all()])
+    display_author.short_description = 'Авторы'
     
 class Status(models.Model):
     name = models.CharField(max_length=20,
@@ -79,3 +82,6 @@ class BookInstance(models.Model):
         verbose_name="Дата окончания статуса")
     def __str__(self):
         return '%s %s %s' % (self.inv_nom, self.book, self.status)
+
+    
+ 
